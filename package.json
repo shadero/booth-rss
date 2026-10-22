@@ -1,0 +1,23 @@
+{
+  "name": "booth-rss-lambda",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "npm run typecheck && esbuild index.ts --bundle --platform=node --target=node24 --format=cjs --outfile=dist/index.js",
+    "pretest": "npm run build",
+    "test": "node --test tests/*.test.cjs",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "cheerio": "1.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "esbuild": "0.28.2",
+    "typescript": "7.0.2"
+  }
+}
